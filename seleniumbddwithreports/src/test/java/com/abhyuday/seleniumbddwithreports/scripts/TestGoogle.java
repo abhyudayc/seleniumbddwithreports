@@ -1,5 +1,6 @@
 package com.abhyuday.seleniumbddwithreports.scripts;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -22,7 +23,9 @@ public class TestGoogle {
 	}
 	
 	@Test
-	public void dummyTest() throws InterruptedException {
-		Thread.sleep(5000);
+	public void searchTest() {
+		boolean isSearched = google.search();
+		google.listSearchResults();
+		Assert.assertTrue(isSearched);
 	}
 }
