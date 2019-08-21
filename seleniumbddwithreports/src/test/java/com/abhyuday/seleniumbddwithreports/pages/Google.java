@@ -34,10 +34,9 @@ public class Google {
 		return attrValue.equals(text);
 	}
 	
-	public void listSearchResults() {
-		List<String> searchResults = selenium.getTextValues("//h3[@class=\"LC20lb\"]/div[@class=\"ellip\"]");
-		for (String searchResult : searchResults)
-			System.out.println(searchResult);
+	public List<String> listSearchResults() {
+		return selenium.getTextValues("//h3[@class=\"LC20lb\"]/div[@class=\"ellip\"]");
+		
 	}
 	
 	public void tearDown() {
