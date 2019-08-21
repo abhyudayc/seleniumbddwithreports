@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Scanner;
@@ -13,19 +14,23 @@ public class FileHandler {
 	public static class CSVFileHandler {
 		
 		private String path = null;
-		private PrintWriter pw = null;
+		private BufferedWriter bw = null;
 		
 		public CSVFileHandler(String path) {
 			try {
 				this.path = path;
-				pw = new PrintWriter(new BufferedWriter(new FileWriter(path)));
+				bw = new BufferedWriter(new FileWriter(path));
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
 		}
 		
 		public void closeCSVFileSession() {
-			pw.close();
+			try {
+				bw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		public void readFromCSV () throws FileNotFoundException {
@@ -44,7 +49,7 @@ public class FileHandler {
 					}
 					lineWithComma.deleteCharAt(lineWithComma.length() - 1);
 					lineWithComma.append("\r\n");
-					pw.println(lineWithComma.toString());
+					bw.write(lineWithComma.toString());
 				}
 				isWritten = true;
 			} catch (Exception e) {
@@ -56,7 +61,7 @@ public class FileHandler {
 		public boolean writeToCSV (String data) {
 			boolean isWritten = false;
 			try {
-				pw.println(data);
+				bw.append(data);
 				isWritten = true;
 			} catch (Exception e) {
 				e.printStackTrace();

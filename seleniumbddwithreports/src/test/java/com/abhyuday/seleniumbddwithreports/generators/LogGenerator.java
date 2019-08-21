@@ -9,8 +9,8 @@ public class LogGenerator {
 	
 	public static void openLogSession() {
 		FILE_PATH = System.getProperty("user.dir") + "\\output\\logs.csv";
-		System.out.println(FILE_PATH);
 		csvFileHandler = new CSVFileHandler(FILE_PATH);
+		System.out.println("Session opened");
 	}
 	
 	public static void log(String[] data) {
@@ -21,9 +21,11 @@ public class LogGenerator {
 		}
 		logData.deleteCharAt(logData.length() - 1);
 		csvFileHandler.writeToCSV(logData.toString());
+		System.out.println("Logged");
 	}
 	
 	public static void closeLogSession() {
 		csvFileHandler.closeCSVFileSession();
+		System.out.println("Session closed");
 	}
 }
