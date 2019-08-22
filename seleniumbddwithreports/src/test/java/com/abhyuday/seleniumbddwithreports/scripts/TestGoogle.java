@@ -2,7 +2,6 @@ package com.abhyuday.seleniumbddwithreports.scripts;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -11,6 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.abhyuday.seleniumbddwithreports.generators.LogGenerator;
+import com.abhyuday.seleniumbddwithreports.generators.ScreenshotGenerator;
 import com.abhyuday.seleniumbddwithreports.pages.Google;
 
 public class TestGoogle {
@@ -23,6 +23,7 @@ public class TestGoogle {
 	public void setUp() {
 		LogGenerator.openLogSession();
 		google = Google.getGoogle();
+		ScreenshotGenerator.init();
 	}
 	
 	@AfterClass
@@ -37,13 +38,21 @@ public class TestGoogle {
 		log(currentTest);
 	}
 	
-	@Test
+	@Test (priority=1)
 	public void searchTest() {
 		boolean isSearched = google.search();
-		List<String> searchResults = google.listSearchResults();
 		testPassed = isSearched;
 		currentTest = "SearchTest";
+		takeScreenshot();
 		Assert.assertTrue(isSearched);
+	}
+	
+	@Test (priority=2)
+	public void selectSearchResult() {
+		testPassed = google.selectSearchResult(2);
+		currentTest = "SelectSearchResult";
+		takeScreenshot();
+		Assert.assertTrue(testPassed);
 	}
 	
 	private void log(String data) {
@@ -53,5 +62,9 @@ public class TestGoogle {
 				data,
 				testPassed==true?"PASS":"FALSE"
 			});
+	}
+	
+	private void takeScreenshot() {
+		ScreenshotGenerator.takeScreenShot();
 	}
 }

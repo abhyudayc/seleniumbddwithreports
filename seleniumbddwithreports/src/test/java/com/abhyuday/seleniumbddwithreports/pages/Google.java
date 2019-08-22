@@ -34,9 +34,28 @@ public class Google {
 		return attrValue.equals(text);
 	}
 	
+	public boolean selectSearchResult(String text) {
+		List<String> searchResults = listSearchResults();
+		for(String searchResult : searchResults) {
+			if (searchResult.equals(text)) {
+				selenium.click("//*[contains(text(), '" + text + "')]");
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean selectSearchResult(int index) {
+		List<String> searchResults = listSearchResults();
+		if (index >= searchResults.size())
+			return false;
+		String searchResult = searchResults.get(index);
+		selenium.click("//*[contains(text(), '" + searchResult + "')]");
+		return true;
+	}
+	
 	public List<String> listSearchResults() {
 		return selenium.getTextValues("//h3[@class=\"LC20lb\"]/div[@class=\"ellip\"]");
-		
 	}
 	
 	public void tearDown() {

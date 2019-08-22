@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,10 +15,11 @@ public class FileHandler {
 		private String path = null;
 		private BufferedWriter bw = null;
 		
-		public CSVFileHandler(String path) {
+		public CSVFileHandler(String path, String hostname, String env) {
 			try {
 				this.path = path;
 				bw = new BufferedWriter(new FileWriter(path));
+				bw.append("hostname: " + hostname + ", environment: " + env + "\n");
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
