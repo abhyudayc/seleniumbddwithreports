@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Selenium {
@@ -80,6 +81,20 @@ public class Selenium {
 	public void sendKeys(String xpathExpression, String text) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathExpression)));
 		driver.findElement(By.xpath(xpathExpression)).sendKeys(text);
+	}
+	
+	public void checkboxSelect(String xpathExpression, int index) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathExpression)));
+		WebElement dropdown = driver.findElement(By.xpath(xpathExpression));
+		Select select = new Select(dropdown);
+		select.selectByIndex(index);
+	}
+	
+	public void checkboxSelect(String xpathExpression, String visibleText) {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathExpression)));
+		WebElement dropdown = driver.findElement(By.xpath(xpathExpression));
+		Select select = new Select(dropdown);
+		select.selectByVisibleText(visibleText);
 	}
 	
 	public String getAttributeValue(String xpathExpression, String attributeName) {

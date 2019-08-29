@@ -11,11 +11,10 @@ import org.testng.annotations.Test;
 
 import com.abhyuday.seleniumbddwithreports.generators.LogGenerator;
 import com.abhyuday.seleniumbddwithreports.generators.ScreenshotGenerator;
-import com.abhyuday.seleniumbddwithreports.pages.Google;
 import com.abhyuday.seleniumbddwithreports.pages.W3Schools;
 import com.abhyuday.seleniumbddwithreports.pages.W3Schools.TryItPage;
+import com.abhyuday.seleniumbddwithreports.pages.W3Schools.W3SchoolsHTMLTagPage;
 import com.abhyuday.seleniumbddwithreports.pages.W3Schools.W3SchoolsHTMLTutorialPage;
-import com.abhyuday.seleniumbddwithreports.pages.W3Schools.W3SchoolsHomePage;
 
 public class TestW3Schools {
 
@@ -69,6 +68,43 @@ public class TestW3Schools {
 		takeScreenshot();
 		TryItPage.closeTryItPage();
 		Assert.assertTrue(requestSubmitted.contains("gender=female"));
+	}
+
+	@Test (priority=5)
+	public void openTryItForCheckBox() {
+		W3SchoolsHTMLTutorialPage.goToTryItForCheckBoxes();
+		takeScreenshot();
+		Assert.assertEquals(w3Schools.getCurrentPageTitle(), "Tryit Editor v3.6");
+	}
+	
+	@Test (priority=6)
+	public void operateOnCheckBoxes() {
+		String requestSubmitted = TryItPage.selectCheckBox("Bike");
+		takeScreenshot();
+		TryItPage.closeTryItPage();
+		Assert.assertTrue(requestSubmitted.contains("vehicle1=Bike"));
+	}
+
+	@Test (priority=7)
+	public void openHTMLSelectTagPage() {
+		w3Schools.selectMenuItem("HTML Tag List");
+		w3Schools.selectMenuItem("<select>");
+		takeScreenshot();
+		Assert.assertEquals(w3Schools.getCurrentPageTitle(), "HTML select tag");
+	}
+	
+	@Test (priority=8)
+	public void openTryItForSelectTag() {
+		W3SchoolsHTMLTagPage.goToTryItForSelectTag();
+		takeScreenshot();
+		Assert.assertEquals(w3Schools.getCurrentPageTitle(), "Tryit Editor v3.6");
+	}
+	
+	@Test (priority=9)
+	public void selectDropDown() {
+		TryItPage.selectDropDown("Opel");
+		takeScreenshot();
+		TryItPage.closeTryItPage();
 	}
 	
 	private void log(String data) {

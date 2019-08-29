@@ -48,6 +48,20 @@ public class W3Schools {
 			selenium.click("//h2[contains(text(), 'Input Type Radio')]/following-sibling::div[@class='w3-example']/a");
 			currentPageHandle = selenium.goToLatestPage();
 		}
+		
+		public static void goToTryItForCheckBoxes() {
+			selenium.click("//h2[contains(text(), 'Input Type Checkbox')]/following-sibling::div[@class='w3-example']/a");
+			currentPageHandle = selenium.goToLatestPage();
+		}
+	}
+	
+	public abstract static class W3SchoolsHTMLTagPage {
+
+		public static void goToTryItForSelectTag() {
+			selenium.click("//*[contains(text(), \"Try it Yourself\")]");
+			currentPageHandle = selenium.goToLatestPage();
+		}
+		
 	}
 	
 	public abstract static class TryItPage {
@@ -68,8 +82,22 @@ public class W3Schools {
 			return requestSubmittedText;
 		}
 		
+		public static String selectCheckBox(String option) {
+			selenium.goToIframe("//iframe[@id='iframeResult']");
+			selenium.click("//input[@type='checkbox'][@value='" + option + "']");
+			selenium.click("//input[@type='submit']");
+			String requestSubmittedText = selenium.getTextValues("//div[@class='w3-container w3-large w3-border']").get(0);
+			return requestSubmittedText;
+		}
+		
+		public static void selectDropDown(String option) {
+			selenium.goToIframe("//iframe[@id='iframeResult']");
+			selenium.checkboxSelect("//select", option);
+		}
+		
 		public static void closeTryItPage() {
 			closePage();
+			selenium.goToLatestPage();
 		}
 	}
 	

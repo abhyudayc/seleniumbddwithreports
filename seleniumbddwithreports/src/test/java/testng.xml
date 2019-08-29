@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="test-suite1">
+	<test name="w3test">
+		<classes>
+			<class name="com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools" />
+			<class name="com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools" />
+			<class name="com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools" />
+			<class name="com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools" />
+			<class name="com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools" />
+		</classes>
+	</test>
+</suite>

@@ -1,4 +1,4 @@
-/*package com.abhyuday.seleniumbddwithreports.scripts;
+package com.abhyuday.seleniumbddwithreports.scripts;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -68,4 +68,3 @@ public class TestGoogle {
 		ScreenshotGenerator.takeScreenShot();
 	}
 }
-*/
