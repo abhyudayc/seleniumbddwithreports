@@ -1,23 +1,27 @@
 package com.abhyuday.seleniumbddwithreports.fileio;
 
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
-import java.util.Scanner;
+import java.util.Map;
+
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class FileHandler {
 
 	public static class CSVFileHandler {
 		
-		private String path = null;
 		private BufferedWriter bw = null;
 		
 		public CSVFileHandler(String path, String hostname, String env) {
 			try {
-				this.path = path;
 				bw = new BufferedWriter(new FileWriter(path));
 				bw.append("hostname: " + hostname + ", environment: " + env + "\n");
 			} catch(Exception e) {
@@ -31,10 +35,6 @@ public class FileHandler {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
-		
-		public void readFromCSV () throws FileNotFoundException {
-			Scanner scanner = new Scanner(new File(path));
 		}
 		
 		@SuppressWarnings("null")
@@ -71,7 +71,67 @@ public class FileHandler {
 		}
 	}
 	
-	static class ExcelFileHandler {
+	public static class ExcelFileHandler {
+		private static XSSFWorkbook workbook;
+		private static XSSFSheet sheet;
 		
+		public static void init() throws IOException {
+			workbook = new XSSFWorkbook("C:\\Users\\Abhyuday\\Desktop\\testdata.xlsx");
+			sheet = workbook.getSheet("preprod_data");
+		}
+		
+		public static List<Map<String, String>> getData() {
+			List<Map<String, String>> data = new ArrayList();
+			Iterator<Row> rowIterator = sheet.rowIterator();
+			int rowCount = 0;
+			List<String> headings = new ArrayList();
+			while(rowIterator.hasNext()) {
+				Row row = rowIterator.next();
+				int cellCounter = 0;
+				rowCount++;
+				Iterator<Cell> cellIterator = row.cellIterator();
+				Map<String, String> dataMap = new HashMap<String, String>(); 
+				while (cellIterator.hasNext()) {
+					Cell cell = cellIterator.next();
+					switch(cell.getCellTypeEnum()) {
+					case STRING:
+						if(rowCount == 1) {
+							headings.add(cell.getStringCellValue());
+						}
+						else {
+							dataMap.put(headings.get(cellCounter++), cell.getStringCellValue());
+						}
+						break;
+					case BLANK:
+						if(rowCount == 1) {
+							headings.add("");
+						}
+						else {
+							dataMap.put(headings.get(cellCounter++), "");
+						}
+						break;
+					case NUMERIC:
+						if(rowCount == 1) {
+							headings.add(cell.getNumericCellValue() + "");
+						}
+						else {
+							dataMap.put(headings.get(cellCounter++), cell.getNumericCellValue() + "");
+						}
+						break;
+					default:
+						if(rowCount == 1) {
+							headings.add(cell.getNumericCellValue() + "");
+						}
+						else {
+							dataMap.put(headings.get(cellCounter++), cell.getStringCellValue() + "");
+						}
+						break;
+							
+					}
+				}
+				data.add(dataMap);
+			}
+			return data;
+		}
 	}
 }

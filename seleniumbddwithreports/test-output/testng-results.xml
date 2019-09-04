@@ -1,93 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38649" started-at="2019-08-29T12:21:15Z" finished-at="2019-08-29T12:21:54Z">
+  <suite name="Default suite" duration-ms="19079" started-at="2019-09-04T12:48:23Z" finished-at="2019-09-04T12:48:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="38649" started-at="2019-08-29T12:21:15Z" finished-at="2019-08-29T12:21:54Z">
-      <class name="com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="setUp" is-config="true" duration-ms="10068" started-at="2019-08-29T12:21:15Z" finished-at="2019-08-29T12:21:25Z">
+    <test name="Default test" duration-ms="19079" started-at="2019-09-04T12:48:23Z" finished-at="2019-09-04T12:48:42Z">
+      <class name="com.abhyuday.seleniumbddwithreports.scripts.TestRegForm">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestRegForm@56ef9176]" name="setup" is-config="true" duration-ms="5378" started-at="2019-09-04T12:48:23Z" finished-at="2019-09-04T12:48:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="goToLearnHTML()[pri:1, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="goToLearnHTML" duration-ms="1986" started-at="2019-08-29T12:21:25Z" finished-at="2019-08-29T12:21:27Z">
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="testWithPreprodData()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestRegForm@56ef9176]" name="testWithPreprodData" duration-ms="12914" started-at="2019-09-04T12:48:28Z" finished-at="2019-09-04T12:48:41Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- goToLearnHTML -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="afterTest" is-config="true" duration-ms="4" started-at="2019-08-29T12:21:27Z" finished-at="2019-08-29T12:21:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="goToHTMLInputTypes()[pri:2, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="goToHTMLInputTypes" duration-ms="2512" started-at="2019-08-29T12:21:27Z" finished-at="2019-08-29T12:21:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- goToHTMLInputTypes -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-08-29T12:21:30Z" finished-at="2019-08-29T12:21:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="openTryItForRadioButton()[pri:3, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="openTryItForRadioButton" duration-ms="4861" started-at="2019-08-29T12:21:30Z" finished-at="2019-08-29T12:21:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openTryItForRadioButton -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-08-29T12:21:35Z" finished-at="2019-08-29T12:21:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="operateOnRadioButtons()[pri:4, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="operateOnRadioButtons" duration-ms="6590" started-at="2019-08-29T12:21:35Z" finished-at="2019-08-29T12:21:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- operateOnRadioButtons -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-08-29T12:21:41Z" finished-at="2019-08-29T12:21:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="openTryItForCheckBox()[pri:5, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="openTryItForCheckBox" duration-ms="1685" started-at="2019-08-29T12:21:41Z" finished-at="2019-08-29T12:21:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openTryItForCheckBox -->
-        <test-method status="PASS" signature="operateOnCheckBoxes()[pri:6, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="operateOnCheckBoxes" duration-ms="1399" started-at="2019-08-29T12:21:43Z" finished-at="2019-08-29T12:21:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- operateOnCheckBoxes -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-08-29T12:21:43Z" finished-at="2019-08-29T12:21:43Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-08-29T12:21:44Z" finished-at="2019-08-29T12:21:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="openHTMLSelectTagPage()[pri:7, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="openHTMLSelectTagPage" duration-ms="4058" started-at="2019-08-29T12:21:44Z" finished-at="2019-08-29T12:21:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openHTMLSelectTagPage -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-08-29T12:21:48Z" finished-at="2019-08-29T12:21:48Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="openTryItForSelectTag()[pri:8, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="openTryItForSelectTag" duration-ms="2931" started-at="2019-08-29T12:21:48Z" finished-at="2019-08-29T12:21:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openTryItForSelectTag -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-08-29T12:21:51Z" finished-at="2019-08-29T12:21:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="selectDropDown()[pri:9, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="selectDropDown" duration-ms="1515" started-at="2019-08-29T12:21:51Z" finished-at="2019-08-29T12:21:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- selectDropDown -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="afterTest" is-config="true" duration-ms="1" started-at="2019-08-29T12:21:53Z" finished-at="2019-08-29T12:21:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools@5700d6b1]" name="tearDown" is-config="true" duration-ms="996" started-at="2019-08-29T12:21:53Z" finished-at="2019-08-29T12:21:54Z">
+        </test-method> <!-- testWithPreprodData -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.abhyuday.seleniumbddwithreports.scripts.TestRegForm@56ef9176]" name="tearDown" is-config="true" duration-ms="766" started-at="2019-09-04T12:48:41Z" finished-at="2019-09-04T12:48:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.abhyuday.seleniumbddwithreports.scripts.TestW3Schools -->
+      </class> <!-- com.abhyuday.seleniumbddwithreports.scripts.TestRegForm -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -80,6 +80,7 @@ public class Selenium {
 	
 	public void sendKeys(String xpathExpression, String text) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpathExpression)));
+		driver.findElement(By.xpath(xpathExpression)).clear();
 		driver.findElement(By.xpath(xpathExpression)).sendKeys(text);
 	}
 	
