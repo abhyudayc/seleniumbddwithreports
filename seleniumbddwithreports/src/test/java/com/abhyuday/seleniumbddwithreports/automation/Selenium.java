@@ -136,6 +136,10 @@ public class Selenium {
 		driver.close();
 	}
 	
+	public void goBack() {
+		driver.navigate().back();
+	}
+	
 	public void tearDown() {
 		driver.quit();
 		driver = null;

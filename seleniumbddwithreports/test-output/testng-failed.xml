@@ -6,8 +6,18 @@
       <class name="com.abhyuday.seleniumbddwithreports.scripts.TestRegForm">
         <methods>
           <include name="setup"/>
+          <include name="test3"/>
+          <include name="test4"/>
+          <include name="test5"/>
+          <include name="test6"/>
+          <include name="test7"/>
+          <include name="test8"/>
+          <include name="test9"/>
           <include name="tearDown"/>
-          <include name="testWithPreprodData"/>
+          <include name="test1"/>
+          <include name="test2"/>
+          <include name="reports"/>
+          <include name="test10"/>
         </methods>
       </class> <!-- com.abhyuday.seleniumbddwithreports.scripts.TestRegForm -->
     </classes>

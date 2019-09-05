@@ -96,10 +96,10 @@ public class FileHandler {
 					switch(cell.getCellTypeEnum()) {
 					case STRING:
 						if(rowCount == 1) {
-							headings.add(cell.getStringCellValue());
+							headings.add(cell.getStringCellValue().trim());
 						}
 						else {
-							dataMap.put(headings.get(cellCounter++), cell.getStringCellValue());
+							dataMap.put(headings.get(cellCounter++), cell.getStringCellValue().trim());
 						}
 						break;
 					case BLANK:
@@ -123,7 +123,7 @@ public class FileHandler {
 							headings.add(cell.getNumericCellValue() + "");
 						}
 						else {
-							dataMap.put(headings.get(cellCounter++), cell.getStringCellValue() + "");
+							dataMap.put(headings.get(cellCounter++), cell.getStringCellValue().trim() + "");
 						}
 						break;
 							

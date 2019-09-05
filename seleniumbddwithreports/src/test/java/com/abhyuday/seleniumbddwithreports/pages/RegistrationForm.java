@@ -1,5 +1,9 @@
 package com.abhyuday.seleniumbddwithreports.pages;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import com.abhyuday.seleniumbddwithreports.automation.Selenium;
 
 public class RegistrationForm {
@@ -67,7 +71,25 @@ private Selenium selenium;
 	}
 
 	public void fillMobileNo(String mobileno) {
-		selenium.sendKeys("//*[@name='personaladdress']", mobileno);
+		selenium.sendKeys("//*[@name='mobileno']", mobileno);
+	}
+	
+	public void formSubmit() {
+		selenium.click("//input[@type='submit']");
+	}
+	
+	public Map<String, String> getSubmittedData() {
+		ArrayList<String> entireText = selenium.getTextValues("//pre");
+		String[] splittedString = entireText.get(0).split("\n");
+		Map<String, String> map = new HashMap<String, String>();
+		for (String s: splittedString) {
+			map.put(s.split(":")[0].trim(), s.split(":")[1].trim());
+		}
+		return map;
+	}
+	
+	public void goBackToFormPage() {
+		selenium.goBack();
 	}
 	
 	public void tearDown() {
